@@ -71,7 +71,7 @@ app.route('/edit/:id')
         var cidade = req.body.cidade
         var uf = req.body.uf
         var profissao = req.body.profissao
-       
+
 
         db.collection(colecao).updateOne({ _id: ObjectId(id) }, {
             $set: {
@@ -82,7 +82,7 @@ app.route('/edit/:id')
                 endereco: endereco,
                 cidade: cidade,
                 uf: uf,
-               profissao : profissao
+                profissao: profissao
             }
         }, (err, result) => {
             if (err) return res.send(err)
@@ -101,3 +101,6 @@ app.route('/delete/:id').get((req, res) => {
         res.redirect('/')
     })
 })
+
+//-------------------------------config Iza------------------------------
+
